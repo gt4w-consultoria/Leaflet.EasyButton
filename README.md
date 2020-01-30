@@ -1,10 +1,12 @@
 # L.EasyButton
 
+## Workaround to allow Resumable.js assignBrowse to L.EasyButton buttons in Firefox.
+
 The easiest way to add buttons with Leaflet &mdash; so simple it fits in a gif:
 
 ![running demo](https://raw.githubusercontent.com/CliffCloud/Leaflet.EasyButton/dist/img/alert_example.gif)
 
-### More [running examples and docs](http://danielmontague.com/projects/easyButton.js/v2/examples/)
+### More [running examples and docs](http://danielmontague.com/projects/easyButton.js/v1/examples/)
 
 -----------------------------------------------------------------------------------
 

@@ -187,11 +187,19 @@ L.Control.EasyButton = L.Control.extend({
     L.DomEvent.addListener(this.button, 'mouseup', L.DomEvent.stop);
 
     // take care of normal clicks
-    L.DomEvent.addListener(this.button,'click', function(e){
-      L.DomEvent.stop(e);
-      this._currentState.onClick(this, this._map ? this._map : null );
-      this._map && this._map.getContainer().focus();
-    }, this);
+    let willHaveClick = (this.options.states).some(element => {
+      return (element.onClick ? true : false)
+    })
+
+    if(willHaveClick)
+    {
+      L.DomEvent.addListener(this.button,'click', function(e){
+        L.DomEvent.stop(e);
+        this._currentState.onClick(this, this._map ? this._map : null );
+        this._map && this._map.getContainer().focus();
+      }, this);
+    }
+
 
     // prep the contents of the control
     if(this.options.type == 'replace'){
